@@ -8,8 +8,6 @@ import java.math.BigDecimal;
 public class ventaControlador {
 
     public void iniciarVenta(clienteModel cliente){
-
-
     }
 
     public boolean agregarProductoAVenta(productoModel producto, int cantidad){
