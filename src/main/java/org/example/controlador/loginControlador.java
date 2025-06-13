@@ -4,15 +4,15 @@ import org.example.modelo.usuarioModel;
 
 public class loginControlador {
 
-    public boolean registrarUsuario(usuarioModel usuario){
+    public boolean registrarUsuario(usuarioModel usuario) throws Exception{
 
     }
 
-    public boolean iniciarSesion(String username, String password) {
+    public boolean iniciarSesion(String username, String password) throws Exception{
 
     }
 
-    public void mostrarVistaPrincipal() {
+    public void mostrarVistaPrincipal() throws Exception{
 
     }
 

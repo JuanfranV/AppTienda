@@ -8,12 +8,12 @@ import java.util.List;
 
 public class reporteControlador {
 
-    public List<ventaModel> generarReporteVentasPorFecha(LocalDate inicio, LocalDate fin){
+    public List<ventaModel> generarReporteVentasPorMes() throws Exception{
 
     }
 
 
-    public void mostrarReporteEnVista(List<ventaModel> ventas){
+    public void mostrarReporteEnVista(List<ventaModel> ventas) throws Exception{
 
     }
 }

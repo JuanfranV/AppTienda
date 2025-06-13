@@ -2,40 +2,42 @@ package org.example.modelo;
 
 public class clienteModel {
 
-    private int idCliente;
-    private String username;
-    private String contreaseña;
+    private int id;
+    private String nombre;
+    private String correo;
 
-    public clienteModel(int idCliente, String username, String contreaseña) {
-        this.idCliente = idCliente;
-        this.username = username;
-        this.contreaseña = contreaseña;
+    public clienteModel(int id, String nombre, String correo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.correo = correo;
     }
 
     public clienteModel() {
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public int getId() {
+        return id;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
-        return username;
+        return nombre;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.nombre = nombre;
     }
 
-    public String getContreaseña() {
-        return contreaseña;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setContreaseña(String contreaseña) {
-        this.contreaseña = contreaseña;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
+
+
 }

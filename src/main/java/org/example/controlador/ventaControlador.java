@@ -1,30 +1,38 @@
 package org.example.controlador;
 
 import org.example.modelo.clienteModel;
+import org.example.modelo.detalleVentaModel;
 import org.example.modelo.productoModel;
+import org.example.modelo.ventaModel;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ventaControlador {
 
-    public void iniciarVenta(clienteModel cliente){
+    public List<ventaModel> listarVenta = new ArrayList<>();
 
+    public List<detalleVentaModel> listarDetalleVenta = new ArrayList<>();
 
-    }
-
-    public boolean agregarProductoAVenta(productoModel producto, int cantidad){
-
-    }
-
-    public BigDecimal calcularTotal(){
+    public void iniciarVenta(clienteModel cliente) throws Exception{
 
     }
 
-    public boolean finalizarVenta(){
+    public boolean agregarProductoAVenta(productoModel producto, int cantidad) throws Exception{
 
     }
 
-    private void actualizarStock(productoModel producto, int cantidadVendida){
+    public BigDecimal calcularTotal() throws Exception{
 
     }
+
+    public boolean finalizarVenta() throws Exception{
+
+    }
+
+    private void actualizarStock(productoModel producto, int cantidadVendida) throws Exception{
+
+    }
+
 }
