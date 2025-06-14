@@ -11,9 +11,13 @@ import java.util.List;
 
 public class ventaControlador {
 
-    public List<ventaModel> listarVenta = new ArrayList<>();
+    public List<ventaModel> listarVenta() throws Exception{
 
-    public List<detalleVentaModel> listarDetalleVenta = new ArrayList<>();
+    }
+
+    public List<detalleVentaModel> listarDetalleVenta() throws Exception{
+
+    }
 
     public void iniciarVenta(clienteModel cliente) throws Exception{
 

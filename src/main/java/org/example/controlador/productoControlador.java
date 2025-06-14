@@ -7,7 +7,9 @@ import java.util.List;
 
 public class productoControlador {
 
-    public List<productoModel> listarProductos = new ArrayList<>();
+    public List<productoModel> listarProductos() throws Exception{
+
+    }
 
     public boolean agregarProducto(productoModel producto) throws Exception{
 
