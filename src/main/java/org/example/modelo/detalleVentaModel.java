@@ -1,5 +1,9 @@
 package org.example.modelo;
 
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class detalleVentaModel {
 
     private int idVentaDetalle;
@@ -58,4 +62,7 @@ public class detalleVentaModel {
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
+
+
+
 }

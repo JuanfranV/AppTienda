@@ -20,6 +20,6 @@ public class clienteControlador {
     }
 
     public void eliminarCliente(int id) throws SQLException{
-
+        clienteModel.eliminarCliente(id);
     }
 }

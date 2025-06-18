@@ -50,13 +50,13 @@ public class clienteModel {
     }
 
     public static List<clienteModel> listarCliente() throws SQLException{
-        String sql = "SELECT id, nombre, correo FROM clientes";
+        String sql = "SELECT id, nombre, correo FROM clientes WHERE eliminado = 0";
         List<clienteModel> lista = new ArrayList<>();
 
         try (
                 Connection con = JDBCUtil.getConnection();
                 PreparedStatement ps = con.prepareStatement(sql);
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = ps.executeQuery()
                 ){
             while (rs.next()){
                 lista.add(new clienteModel(
@@ -94,6 +94,19 @@ public class clienteModel {
 
             ps.executeUpdate();
         }
+    }
+
+    public static void eliminarCliente(int id) throws SQLException{
+        String sql = "UPDATE clientes SET eliminado = 1 WHERE id = ?";
+        try(
+                Connection con = JDBCUtil.getConnection();
+                PreparedStatement ps = con.prepareStatement(sql)
+                ){
+            ps.setInt(1, id);
+
+            ps.executeUpdate();
+        }
+
     }
 
 

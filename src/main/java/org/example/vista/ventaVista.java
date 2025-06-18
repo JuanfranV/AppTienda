@@ -8,16 +8,15 @@ public class ventaVista extends JDialog{
     private JButton actualizarDetallesDeLasButton;
     private JPanel panel1;
     private JButton iniciarVentaButton;
-    private JTextField textField1;
+    private JTextField idCllienteTextField;
     private JTable tableClientes;
     private JButton volverButton;
     private JButton clientesButton;
-    private JTextField textField2;
     private JTable tableProductos;
     private JButton productosButton;
     private JPanel panelIniciarVenta;
     private JTable tableDetallesDeLasVentas;
-    private JTextField textField3;
+    private JTextField idProductoTextField;
     private JButton agreagarALaVentaButton;
     private JTable tableProductosFinales;
     private JButton totalButton;

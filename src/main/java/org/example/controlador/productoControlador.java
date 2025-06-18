@@ -2,27 +2,25 @@ package org.example.controlador;
 
 import org.example.modelo.productoModel;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
 
 public class productoControlador {
 
-    public List<productoModel> listarProductos() throws Exception{
-
+    public List<productoModel> listarProductos() throws SQLException {
+        return productoModel.listarProductos();
     }
 
-    public boolean agregarProducto(productoModel producto) throws Exception{
-
-
+    public void agregarProducto(String nombre, double precio, int stock) throws SQLException{
+        productoModel.agregarProducto(nombre, precio, stock);
     }
 
-    public boolean editarProducto(productoModel producto) throws Exception{
-
+    public void editarProducto(int id, String nombre, double precio, int stock) throws SQLException{
+        productoModel.editarProducto(id, nombre, precio, stock);
     }
 
-    public boolean eliminarProducto(int id) throws Exception{
-
-
+    public void eliminarProducto(int id) throws SQLException{
+        productoModel.eliminarProducto(id);
     }
 
 

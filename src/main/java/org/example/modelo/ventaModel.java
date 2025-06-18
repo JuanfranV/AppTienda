@@ -1,6 +1,10 @@
 package org.example.modelo;
 
-import java.sql.Date;
+import org.example.JDBCUtil;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ventaModel {
 
@@ -8,13 +12,6 @@ public class ventaModel {
     private int clienteId;
     private Date fecha;
     private double total;
-
-    public ventaModel(int id, Date fecha, int clienteId, double total) {
-        this.id = id;
-        this.fecha = fecha;
-        this.clienteId = clienteId;
-        this.total = total;
-    }
 
     public ventaModel() {
     }
@@ -50,4 +47,18 @@ public class ventaModel {
     public void setTotal(double total) {
         this.total = total;
     }
-}
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
