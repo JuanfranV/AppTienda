@@ -1,7 +1,9 @@
 package org.example.modelo;
 
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class detalleVentaModel {
@@ -63,6 +65,11 @@ public class detalleVentaModel {
         this.precioUnitario = precioUnitario;
     }
 
+
+    public BigDecimal calcularTotal() {
+
+        return total;
+    }
 
 
 }

@@ -3,27 +3,28 @@ package org.example.controlador;
 import org.example.modelo.*;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.sql.Date;
+import java.sql.SQLException;
 
 public class ventaControlador {
 
-    public void iniciarVenta(clienteModel cliente) throws Exception{
+    public void iniciarVenta(int cliente, Date fechaSQl) throws SQLException {
+        ventaModel.iniciarVenta(cliente, fechaSQl);
+    }
+
+    public void agregarProductoAVenta( int stock,int productoId, int cantidad) throws SQLException{
+        ventaModel.agregarProductoALaVenta(stock, cantidad, productoId);
+    }
+
+    public BigDecimal calcularTotal() throws SQLException{
 
     }
 
-    public boolean agregarProductoAVenta(productoModel producto, int cantidad) throws Exception{
+    public void finalizarVenta() throws SQLException{
 
     }
 
-    public BigDecimal calcularTotal() throws Exception{
-
-    }
-
-    public boolean finalizarVenta() throws Exception{
-
-    }
-
-    private void actualizarStock(productoModel producto, int cantidadVendida) throws Exception{
+    private void actualizarStock(productoModel producto, int cantidadVendida) throws SQLException{
 
     }
 

@@ -13,6 +13,19 @@ public class reporteModel {
     private String productoNombre;
     private int detalleVentaCantidad;
     private double total;
+    private int ventaId;
+    private double precioUnitario;
+
+
+    public reporteModel(Date fecha, String clienteNombre, String productoNombre, int detalleVentaCantidad, double total, int ventaId, double precioUnitario) {
+        this.fecha = fecha;
+        this.clienteNombre = clienteNombre;
+        this.productoNombre = productoNombre;
+        this.detalleVentaCantidad = detalleVentaCantidad;
+        this.total = total;
+        this.ventaId = ventaId;
+        this.precioUnitario = precioUnitario;
+    }
 
     public reporteModel(Date fecha, String clienteNombre, String productoNombre, int detalleVentaCantidad, double total) {
         this.fecha = fecha;
@@ -26,6 +39,13 @@ public class reporteModel {
         this.clienteNombre = clienteNombre;
         this.fecha = fecha;
         this.total = total;
+    }
+
+    public reporteModel(int ventaId, String productoNombre, int detalleVentaCantidad, double precioUnitario) {
+        this.ventaId = ventaId;
+        this.productoNombre = productoNombre;
+        this.detalleVentaCantidad = detalleVentaCantidad;
+        this.precioUnitario = precioUnitario;
     }
 
     public reporteModel() {
@@ -71,6 +91,22 @@ public class reporteModel {
         this.total = total;
     }
 
+    public int getVentaId() {
+        return ventaId;
+    }
+
+    public void setVentaId(int ventaId) {
+        this.ventaId = ventaId;
+    }
+
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
     public static List<reporteModel> reporteVentasPorMes() throws SQLException {
         String sql = "SELECT v.fecha, c.nombre AS cliente, p.nombre AS producto, d_v.cantidad, (p.precio * d_v.cantidad) AS total FROM venta v JOIN detalle_venta d_v ON v.id = d_v.venta_id JOIN productos p ON d_v.producto_id = p.id JOIN clientes c ON v.cliente_id = c.id WHERE v.fecha >= CURDATE() - INTERVAL 1 MONTH";
         List<reporteModel> reporte = new ArrayList<>();
@@ -112,5 +148,26 @@ public class reporteModel {
         return lista;
     }
 
+    public static List<reporteModel> listarDetalleventa() throws SQLException{
+        String sql = "SELECT venta_id AS venta, p.nombre AS producto, cantidad, precio_unitario FROM detalle_venta d_v JOIN productos p ON d_v.producto_id = p.id";
+        List<reporteModel> lista = new ArrayList<>();
 
-}
+        try(
+                Connection con = JDBCUtil.getConnection();
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()
+                ){
+            while (rs.next()){
+                lista.add(new reporteModel(
+                        rs.getInt("venta_id"),
+                        rs.getString("nombre"),
+                        rs.getInt("cantidad"),
+                        rs.getDouble("precio_unitario")
+                ));
+            }
+        }
+        return lista;
+    }
+
+
+    }

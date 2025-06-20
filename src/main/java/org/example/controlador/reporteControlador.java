@@ -17,7 +17,7 @@ public class reporteControlador {
     }
 
     public List<reporteModel> listarDetalleVenta() throws Exception{
-
+        return reporteModel.listarDetalleventa();
     }
 
 }
