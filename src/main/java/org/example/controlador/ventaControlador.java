@@ -2,7 +2,6 @@ package org.example.controlador;
 
 import org.example.modelo.*;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.SQLException;
 
@@ -16,8 +15,8 @@ public class ventaControlador {
         ventaModel.agregarProductoALaVenta(stock, cantidad, productoId);
     }
 
-    public BigDecimal calcularTotal() throws SQLException{
-
+    public double calcularTotal() throws SQLException{
+        return 00.01;
     }
 
     public void finalizarVenta() throws SQLException{

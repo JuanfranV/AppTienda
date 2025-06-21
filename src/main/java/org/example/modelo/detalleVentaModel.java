@@ -66,10 +66,5 @@ public class detalleVentaModel {
     }
 
 
-    public BigDecimal calcularTotal() {
-
-        return total;
-    }
-
 
 }
